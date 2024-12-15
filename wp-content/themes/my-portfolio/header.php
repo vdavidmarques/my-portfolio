@@ -40,7 +40,7 @@
           </a>
         </div>
         <div class="icons">
-          
+
           <div class="top">
             <div class="menu-items">
               <nav class="navbar" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
@@ -58,16 +58,28 @@
                   PT
                 </a>
               </nav>
-            
+
             </div>
           </div>
         </div>
       </div>
       <div class="download">
-        <a
-          href="library/docs/curiculo-vdavidmarques-sao-paulo.pdf"
-          class="button scroll-effect download"
-          target="_blank">Download CV</a>
+        <?php
+        $args = array(
+          'name' => 'informacoes-gerais',
+          'post_type' => 'post',
+        );
+
+        $query = new WP_Query($args);
+        while ($query->have_posts()) :
+          $query->the_post();
+          $doc = get_field('doc');
+        ?>
+          <a
+            href="<?php echo $doc['url']; ?>"
+            class="button scroll-effect download"
+            target="_blank">Download CV</a>
+        <?php endwhile; ?>
       </div>
     </header>
     <main>
