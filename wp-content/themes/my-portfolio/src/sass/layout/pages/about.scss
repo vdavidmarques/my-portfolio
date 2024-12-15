@@ -1,0 +1,42 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+
+.about{
+    margin-top: 2.5rem;
+    display: grid;
+    @include grid-cols-12;
+    @media (min-width: $breakpoint-lg){
+        margin-top: 5rem;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        @include col-span-12;
+        
+        @media (min-width: $breakpoint-lg){
+            @include col-span-10;
+            @include col-start-2;
+        }
+        .title{
+            font-size: 1.875rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        .subtitle{
+            font-size: 1.125rem;
+            font-weight: 700;
+        }
+
+        .list{
+            list-style: disc;
+            margin-left: 1.25rem;
+        }
+
+        .link{
+            text-decoration: underline;
+        }
+    }
+}

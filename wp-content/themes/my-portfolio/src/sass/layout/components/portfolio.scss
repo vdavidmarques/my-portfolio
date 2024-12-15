@@ -1,0 +1,81 @@
+@import "../../helpers/variables.scss";
+@import "../../helpers/mixins.scss";
+
+.portfolio{
+    display: grid;
+    margin-top: 2.5rem;
+    @include grid-cols-1;
+    column-gap: 1.25rem;
+    row-gap: 2.5rem;
+
+    @media (min-width: $breakpoint-xl){
+        @include grid-cols-2;
+        column-gap: 2.5rem;
+        row-gap: 5rem;
+    }
+
+    .contents{
+        background-color: $white;
+        color: $blue-dark;
+        @include grid-cols-6;
+        display: grid;
+        border-radius: 1.25rem;
+
+        @media (min-width: $breakpoint-xl){
+            @include border-radius;
+        }
+
+        .thumbnail{
+            @include col-span-12;
+            border-radius: 1.25rem 1.25rem 0 0;
+            overflow: hidden;
+
+            @media (min-width: $breakpoint-lg){
+                border-radius: 0;
+                @include col-span-3;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .content{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            @include col-span-12;
+            margin-top: 0;
+
+            @media (min-width: $breakpoint-lg){
+                @include col-span-3;
+                padding: 2.5rem;
+            }
+
+            .texts{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                row-gap: 1.25rem;
+
+                .tag{
+                    background-color: $blue-dark;
+                    color: $gray-light;
+                }
+
+                .title{
+                    text-transform: uppercase;
+                    font-size: 1.25rem;
+                }
+
+                .links{
+                    display: flex;
+                    flex-direction: row;
+                    column-gap: 1.25rem;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

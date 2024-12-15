@@ -1,0 +1,240 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html{
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  @include font-rubik;
+  background-color: $blue-dark;
+  padding: 1.25rem;
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 64px 40px;
+  }
+} 
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul{
+  list-style: none;
+}
+
+img{
+  object-fit: cover;
+
+}
+
+.overflow-hidden { 
+  overflow: hidden;
+}
+
+.container {
+  padding: 0 16px;
+  width: 100%;
+  @include mx-auto;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    max-width: $breakpoint-sm;
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    max-width: $breakpoint-md;
+  }
+
+  @media screen and (min-width: $breakpoint-lg) {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  &.main-content{
+    background-color: $gray-medium;
+    padding: 1.25rem;
+    border-radius: 1.25rem;
+ 
+    @media screen and (min-width: $breakpoint-lg) {
+      padding: 3.125rem 1.875rem;
+    }
+  }
+}
+
+.ease-in-out{
+  transition: all 0.5s ease-in-out;
+
+  &:hover{
+
+    transform: scale(1.1); 
+  }
+}
+
+.scroll-effect {
+  opacity: 0;
+  transform: translateY(3.125rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.scroll-effect.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon{
+  width: 2.5rem;
+  height: 2.5rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  
+  &.github{
+
+    &.white{
+      background-image: url('../icons/github-white.svg');
+    }
+
+    &.blue{
+      background-image: url('../icons/github.svg');
+    }
+  }
+
+  &.behance{
+
+    &.white{
+      background-image: url('../icons/behance-white.svg');
+    }
+
+    &.blue{
+      background-image: url('../icons/behance.svg');
+    }
+  }
+
+  
+  &.figma{
+
+    &.white{
+      background-image: url('../icons/figma-white.svg');
+    }
+
+    &.blue{
+      background-image: url('../icons/figma.svg');
+    }
+  }
+
+  &.email{
+    background-image: url('../icons/email.svg');
+  }
+
+  &.instagram{
+    background-image: url('../icons/instagram.svg');    
+  }
+
+  &.wpp{
+    background-image: url('../icons/wpp.svg');    
+  }
+
+}
+
+.tag{
+  border-radius: 1.25rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  width: fit-content;
+  padding: 0.3125rem 0.625rem;
+}

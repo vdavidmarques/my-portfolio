@@ -1,0 +1,140 @@
+@import "../helpers/variables.scss";
+@import "../helpers/mixins.scss";
+
+header {
+  @include col-span-12;
+  display: grid;
+  align-items: center;
+  @include grid-cols-12;
+  row-gap: 2.5rem;
+
+  @media screen and (min-width: $breakpoint-lg) {
+    row-gap: 1.875rem;
+  }
+  .header-top{
+    @include col-span-12;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 1.25rem;
+    
+    @media screen and (min-width: $breakpoint-lg) {
+      justify-content: space-between;
+      flex-direction: row;
+      @include col-span-9;
+      text-align: inherit;
+    }
+
+    .branding {
+      @include col-span-12;
+
+      @media (min-width: $breakpoint-lg) {
+        @include col-span-4;
+      }
+
+      .title {
+        font-size: 2.25rem;
+        text-align: center;
+        font-weight: 900;
+        color: $blue-dark;
+        text-transform: uppercase;
+
+        @media screen and (min-width: $breakpoint-lg) {
+          text-align: left;
+        }
+      }
+    }
+
+    .icons {
+      @include col-span-12;
+      @media screen and (min-width: $breakpoint-lg) {
+        @include col-span-8;
+      }
+
+      .top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @media screen and (min-width: $breakpoint-lg) {
+          justify-content: end;
+          column-gap: 2.5rem;
+        }
+        @media screen and (min-width: $breakpoint-xl) {
+          column-gap: 6.25rem;
+        }
+
+        .menu-items {
+          .navbar {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.25rem;
+
+            @media screen and (min-width: $breakpoint-lg) {
+              flex-direction: row;
+              column-gap: 1.25rem;
+              align-items: center;
+            }
+
+            ul.list {
+              display: flex;
+              flex-direction: column;
+              row-gap: 1.25rem;
+
+              @media screen and (min-width: $breakpoint-lg) {
+                flex-direction: row;
+                column-gap: 1.25rem;
+              }
+            }
+
+            a {
+              text-transform: uppercase;
+              color: $blue-dark;
+              font-weight: 900;
+              @media screen and (min-width: $breakpoint-lg) {
+                font-size: 1.25rem;
+              }
+              &:hover {
+                color: $blue;
+                @include transition-colors;
+              }
+            }
+            a.language {
+              font-size: 1rem;
+              font-weight: 700;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+
+  .download {
+    margin-left: auto;
+    margin-right: auto;
+    @include col-span-12;
+
+    @media screen and (min-width: $breakpoint-lg) {
+      @include col-span-3;
+      text-align: right;
+      margin-left: inherit;
+      margin-right: inherit;
+    }
+
+    .button {
+      background-color: $blue;
+      color: $blue-dark;
+      font-weight: 900;
+      border-radius: 0.625rem;
+
+      &:hover {
+        background-color: $blue-dark;
+        color: $blue;
+        @include transition-colors;
+      }
+    }
+  }
+}

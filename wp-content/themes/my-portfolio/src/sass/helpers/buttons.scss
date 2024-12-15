@@ -1,0 +1,43 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.button {
+    text-transform: uppercase;
+    text-align: center;
+    width: fit-content;
+    @include transition-colors;
+
+    &.read-more{
+        border-radius: 1.25rem;
+        padding: 0.625rem 1.875rem 0.625rem 0.625rem;
+        background-repeat: no-repeat;
+        background-size: 0.375rem auto;
+        background-position: 90% 50%;
+        font-size: 0.875rem;
+
+        &.white{
+            background-color: $gray-light;
+            color: $blue-dark;
+            background-image: url('../icons/arrow-right-blue.svg');
+
+            &:hover{
+                background-color: $blue;
+            }                       
+        }
+        
+        &.blue{
+            background-color: $blue-dark;
+            color: $gray-light;
+            background-image: url('../icons/arrow-right.svg');
+
+            &:hover{
+                background-color: $blue;
+                color: $blue-dark;
+            }                       
+        }
+    }
+
+    &.download{
+        padding: 0.625rem;
+    }
+}
