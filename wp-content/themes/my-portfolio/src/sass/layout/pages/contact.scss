@@ -1,32 +1,35 @@
 @import "../../helpers/variables.scss";
 @import "../../helpers/mixins.scss";
 
-.content{
-    display: grid;
-    @include grid-cols-12;
-    margin-top: 2.5rem;
-    @media (min-width: $breakpoint-lg){
-        margin-top: 5rem;
-    }
-
-    .contact{
-        @include col-span-12;
-
+.contact{
+    .content{
+        display: grid;
+        @include grid-cols-12;
+        color: $blue-dark;
+        margin-top: 2.5rem;
         @media (min-width: $breakpoint-lg){
-            @include col-span-9;
-            @include col-start-2;
-        }
-        .title{
-            font-size: 1.875rem;
-            margin-bottom: 2.5rem;
-            font-weight: 700;
+            margin-top: 5rem;
         }
     
-        .links{
-            margin-top: 1.25rem;
-            display: flex;
-            flex-direction: row;
-            column-gap: 20px;
+        .contact{
+            @include col-span-12;
+    
+            @media (min-width: $breakpoint-lg){
+                @include col-span-9;
+                @include col-start-2;
+            }
+            .title{
+                font-size: 1.875rem;
+                margin-bottom: 2.5rem;
+                font-weight: 900;
+            }
+        
+            .links{
+                margin-top: 1.25rem;
+                display: flex;
+                flex-direction: row;
+                column-gap: 20px;
+            }
         }
     }
 }

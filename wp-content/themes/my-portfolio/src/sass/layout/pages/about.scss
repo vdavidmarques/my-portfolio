@@ -14,20 +14,24 @@
         flex-direction: column;
         row-gap: 1.25rem;
         @include col-span-12;
+        color: $blue-dark;
         
         @media (min-width: $breakpoint-lg){
             @include col-span-10;
             @include col-start-2;
         }
+        
+        .title, .subtitle{
+            font-weight: 900;
+            text-transform: uppercase;
+        }
         .title{
             font-size: 1.875rem;
             margin-bottom: 1.25rem;
-            font-weight: 700;
         }
 
         .subtitle{
             font-size: 1.125rem;
-            font-weight: 700;
         }
 
         .list{
