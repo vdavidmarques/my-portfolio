@@ -22,12 +22,6 @@
     ?>
     Portfólio - Vinícius Marques
   </title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
@@ -35,9 +29,11 @@
     <header class="scroll-effect">
       <div class="header-top">
         <div class="branding">
-          <a href="/" class="title scroll-effect">
-            <h1>Vinícius Marques</h1>
-          </a>
+          <?php
+          if (function_exists('the_custom_logo')) {
+            the_custom_logo();
+          }
+          ?>
         </div>
         <div class="icons">
 

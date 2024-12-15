@@ -28,11 +28,20 @@ header {
 
     .branding {
       @include col-span-12;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 10px;
 
       @media (min-width: $breakpoint-lg) {
         @include col-span-4;
       }
-
+      img.custom-logo{
+        width: 11.25rem;
+        height: auto;
+      }
+      
       .title {
         font-size: 2.25rem;
         text-align: center;
@@ -120,7 +129,7 @@ header {
     @media screen and (min-width: $breakpoint-lg) {
       @include col-span-3;
       text-align: right;
-      margin-left: inherit;
+      margin-left: 1.25rem;
       margin-right: inherit;
     }
 

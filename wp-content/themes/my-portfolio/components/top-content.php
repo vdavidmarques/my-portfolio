@@ -78,10 +78,11 @@
     $id = get_page_id_by_slug($slug);
     ?>
     <aside class="skills scroll-effect">
-        <h2 class="title">
+        <h1 class="title">Vinícius Marques</h1>
+        <h2 class="subtitle">
             <?php echo get_field('title', $id) ?>
         </h2>
-        <h3 class="subtitle">Competências </h3>
+        <h3>Competências</h3>
         <ul class="list">
             <?php
             $skills = get_field('skills', $id);
@@ -91,5 +92,8 @@
             <?php endforeach
             ?>
         </ul>
+        <a href="<?php $link = get_field('read-more', $id); echo $link['url']; ?>" class="button">
+            <?php echo $link['title']; ?>
+        </a>
     </aside>
 </section>
